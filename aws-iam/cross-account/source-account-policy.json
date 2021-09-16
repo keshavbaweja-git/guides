@@ -1,0 +1,31 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "S1",
+            "Effect": "Allow",
+            "Action": [
+                "kinesis:DescribeStream",
+                "kinesis:GetShardIterator",
+                "kinesis:GetRecords",
+                "kinesis:ListShards",
+                "kinesis:DescribeStreamSummary",
+                "kinesis:RegisterStreamConsumer"
+            ],
+            "Resource": [
+                "arn:aws:kinesis:ap-southeast-1:621179360591:stream/StockTradeStream"
+            ]
+        },
+        {
+            "Sid": "S2",
+            "Effect": "Allow",
+            "Action": [
+                "kinesis:SubscribeToShard",
+                "kinesis:DescribeStreamConsumer"
+            ],
+            "Resource": [
+                "arn:aws:kinesis:ap-southeast-1:621179360591:stream/StockTradeStream/*"
+            ]
+        }
+    ]
+}
